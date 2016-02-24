@@ -6,12 +6,14 @@
   </head>
   <body>
 
+    <div id='btn'>click</div>
     <script>
       (function() {
         'use strict';
-        use_ie();
 
-        function use_ie() {
+        var btn = document.getElementById('btn');
+
+        byn.addEventListener('click', function use_ie() {
           // IE起動
           var ie = WScript.CreateObject("InternetExplorer.Application")
           ie.Navigate( "http://www.google.co.jp/" );
@@ -26,7 +28,7 @@
           // 制御を破棄
           ie.Quit();
           ie = null;
-        }
+        });
 
 
         // IEがビジー状態の間待ちます
