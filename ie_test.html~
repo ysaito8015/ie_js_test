@@ -28,7 +28,7 @@
 
         var btn = document.getElementById('btn');
 
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function use_ie() {
           // IE起動
           var ie = WScript.CreateObject("InternetExplorer.Application")
           ie.Navigate( "http://www.google.co.jp/" );
