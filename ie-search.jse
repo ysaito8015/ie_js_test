@@ -1,0 +1,27 @@
+// 設定
+var query  = "test";
+
+// IE起動
+var ie = WScript.CreateObject("InternetExplorer.Application");
+ie.Navigate("https://www.google.co.jp");
+ie.Visible = true;
+// アクセス完了まで待つ。
+waitIE(ie);
+
+$("input[name='q']").value = query;
+WScript.Sleep(100);
+$("input[name='btnK']").click();
+waitIE(ie);
+
+// IEがビジー状態の間待つ
+function waitIE(ie) {
+  while(ie.Busy || ie.readystate != 4) {
+    WScript.Sleep(100);
+  }
+  WScript.Sleep(1000);
+}
+// 特定の要素を得る
+function $(selector) {
+  return ie.document.querySelector(selector);
+}
+
